@@ -1,7 +1,2 @@
 node_modules
 build
-raw/**/*.jpg
-raw/**/*.jpeg
-raw/**/*.png
-raw/**/*.svg
-!raw/**/README.md
