@@ -8,26 +8,15 @@ sessionStorage.clear();
 
 // Get api data
 async function fetchCards() {
-	const options = {
-		method: 'GET',
-		headers: {
-			'Access-Control-Allow-Headers':'application/json',
-			'Access-Control-Allow-Origin':'*',
-			'Access-Control-Request-Method': 'GET',
-			'Content-Type':'application/json'
-		}
-	};
-	const response = await fetch('https://jsonplaceholder.typicode.com/posts', options);
-	if (response.ok) {
-		const json = await response.json();
-		// Get only required ammount of items from api data
-		let n = 20;
-		const cardsRequired = json.slice(0, n);
-		// Save api data for performance
-		sessionStorage.setItem('cardsPreloaded', JSON.stringify(cardsRequired));
-	} else {
-		// console.log("HTTP-Error: " + response.status);
-	}
+	fetch('https://jsonplaceholder.typicode.com/posts')
+		.then(response => response.json())
+		.then(json => {
+			// Get only required ammount of items from api data
+			let n = 20;
+			const cardsRequired = json.slice(0, n);
+			// Save api data for performance
+			sessionStorage.setItem('cardsPreloaded', JSON.stringify(cardsRequired));
+		});
 }
 fetchCards();
 
