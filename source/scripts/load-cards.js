@@ -10,7 +10,7 @@ async function fetchCards() {
 	const options = {
 		method: 'GET',
 		headers: {
-			'Content-Type':'application/json; charset=UTF-8'
+			'Content-Type':'application/json'
 		}
 	};
 	const response = await fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_end=20', options);
