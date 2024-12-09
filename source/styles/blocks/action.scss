@@ -1,0 +1,82 @@
+.action {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12.5px;
+	width: fit-content;
+	margin-left: 9px;
+}
+
+.action__call {
+	opacity: 0.4;
+	display: flex;
+	width: 92.5px;
+	height: 60px;
+	margin-right: 10px;
+	background-image: url('/images/carbon_phone-filled.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.action__call:focus {
+  opacity: 1;
+}
+
+.action__call::before {
+	content: '';
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	background-color: transparent;
+	border: 1px solid var(--main-color);
+	transform: skewX(-17deg);
+	background-repeat: no-repeat;
+}
+
+.action__request {
+	position: relative;
+	color: var(--main-color);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 264px;
+	height: 60px;
+	margin-right: 20px;
+	z-index: 1;
+}
+
+@media (max-width: 768px) {
+	.action__request {
+		width: 201.5px;
+	}
+}
+
+.action__request::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: var(--back-color-light);
+	transform: skewX(-17deg);
+	z-index: -1;
+}
+
+.action::after {
+	content: '';
+	position: absolute;
+	right: 10px;
+	top: 0;
+	display: inline-block;
+	width: 6px;
+	height: 100%;
+	background-color: var(--main-color);
+	transform: skewX(-17deg);
+}

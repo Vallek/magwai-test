@@ -1,0 +1,123 @@
+.cards {
+	max-width: 1720px;
+	margin: 0 auto;
+	margin-bottom: 43px;
+	padding: 134px 49px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+@media (max-width: 767px) {
+	.cards {
+		padding: 134px 16px 0;
+	}
+}
+
+.cards__heading {
+	align-self: flex-start;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+	font-size: 42px;
+	line-height: normal;
+	text-transform: uppercase;
+	color: var(--main-color);
+	margin: 0;
+	margin-bottom: 53px;
+}
+
+.cards__items {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 320px);
+	grid-template-rows: repeat(6, auto);
+	justify-content: center;
+	gap: 30px;
+	width: 100%;
+	margin-bottom: 60px;
+}
+
+.cards__item {
+	grid-row: span 6;
+	display: grid;
+	grid-template-rows: subgrid;
+	gap: 0;
+	color: var(--main-color-dark);
+	background-color: var(--main-color);
+}
+
+.cards__item {
+	--side-padding: 23.5px;
+	padding: 0 var(--side-padding) 30px;
+}
+
+.cards__image {
+	max-width: unset;
+	width: calc(100% + var(--side-padding)*2);
+	margin-left: calc(var(--side-padding) * -1);
+}
+
+.cards__title {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+	font-size: 14px;
+	text-transform: uppercase;
+	line-height: 186%;
+	letter-spacing: 0.11em;
+	color: var(--main-color-dark);
+	margin: 0;
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+
+.cards__subtitle {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 162%;
+	color: var(--main-color-dark);
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.cards__text {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 171%;
+	color: var(--main-color-dark);
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.cards__date {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 200%;
+	color: var(--main-color-dark);
+	margin: 0;
+	margin-bottom: 25px;
+}
+
+.cards__author {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 200%;
+	color: var(--main-color-dark);
+	margin-bottom: 25px;
+}
+
+.cards__link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 50px;
+	color: var(--main-color);
+	background-color: var(--main-color-dark);
+	text-decoration: none;
+	font-family: "Mulish", sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+}
