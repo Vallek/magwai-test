@@ -4,6 +4,7 @@ const loadButton = document.querySelector('.cards__load');
 const allCards = document.querySelector('.cards__items');
 const card = document.querySelector('.cards__item');
 let count = 0;
+sessionStorage.clear();
 
 // Get api data
 async function fetchCards() {
@@ -13,11 +14,14 @@ async function fetchCards() {
 			'Content-Type':'application/json'
 		}
 	};
-	const response = await fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_end=20', options);
+	const response = await fetch('https://jsonplaceholder.typicode.com/posts', options);
 	if (response.ok) {
 		const json = await response.json();
+		// Get only required ammount of items from api data
+		let n = 20;
+		const cardsRequired = json.slice(0, n);
 		// Save api data for performance
-		sessionStorage.setItem('cardsPreloaded', JSON.stringify(json));
+		sessionStorage.setItem('cardsPreloaded', JSON.stringify(cardsRequired));
 	} else {
 		// console.log("HTTP-Error: " + response.status);
 	}
