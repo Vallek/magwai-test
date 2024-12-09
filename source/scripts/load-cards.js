@@ -19,7 +19,7 @@ async function fetchCards() {
 		// Save api data for performance
 		sessionStorage.setItem('cardsPreloaded', JSON.stringify(json));
 	} else {
-		console.log("HTTP-Error: " + response.status);
+		// console.log("HTTP-Error: " + response.status);
 	}
 }
 fetchCards();
