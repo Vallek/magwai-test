@@ -67,8 +67,16 @@
 	width: 100%;
 	height: 100%;
 	background-color: var(--back-color-light);
+	background-image: linear-gradient(to left, var(--back-color-light) 50%, #f55eb4 50%);
+	background-size: 200% 100%;
+	background-position-x: 100%;
+	transition: background-position-x 0.3s ease-out;
 	transform: skewX(-17deg);
 	z-index: -1;
+}
+
+.action__request:hover::before {
+	background-position-x: 0%;
 }
 
 .action::after {
@@ -80,5 +88,14 @@
 	width: 6px;
 	height: 100%;
 	background-color: var(--main-color);
+	background-image: linear-gradient(to top, #f55eb4 50%, var(--back-color-light) 50%);
+	background-size: 100% 200%;
+	background-position-y: 0%;
+	transition: background-position-y 0.3s 0s ease-out;
 	transform: skewX(-17deg);
+}
+
+.action:hover::after {
+	background-position-y: 100%;
+	transition-delay: 0.3s !important;
 }
