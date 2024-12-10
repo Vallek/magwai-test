@@ -1,22 +1,31 @@
 'use stict';
 
+sessionStorage.clear();
+let count = 0;
 const loadButton = document.querySelector('.cards__load');
 const allCards = document.querySelector('.cards__items');
 const card = document.querySelector('.cards__item');
-let count = 0;
-sessionStorage.clear();
 
 // Get api data
 async function fetchCards() {
-	fetch('https://jsonplaceholder.typicode.com/posts')
-		.then(response => response.json())
-		.then(json => {
-			// Get only required ammount of items from api data
-			let n = 20;
-			const cardsRequired = json.slice(0, n);
-			// Save api data for performance
-			sessionStorage.setItem('cardsPreloaded', JSON.stringify(cardsRequired));
-		});
+	const options = {
+		method: 'GET',
+		headers: {
+			'Access-Control-Allow-Headers':'application/json',
+			'Access-Control-Allow-Origin':'*',
+			'Access-Control-Request-Method': 'GET',
+			'Content-Type':'application/json'
+		}
+	};
+	const response = await fetch('https://jsonplaceholder.typicode.com/posts', options);
+	if (response.ok) {
+		const json = await response.json();
+		// Get only required ammount of items from api data
+		let n = 20;
+		const cardsRequired = json.slice(0, n);
+		// Save api data for performance
+		sessionStorage.setItem('cardsPreloaded', JSON.stringify(cardsRequired));
+	}
 }
 fetchCards();
 
