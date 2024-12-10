@@ -11,9 +11,6 @@ async function fetchCards() {
 	const options = {
 		method: 'GET',
 		headers: {
-			'Access-Control-Allow-Headers':'application/json',
-			'Access-Control-Allow-Origin':'*',
-			'Access-Control-Request-Method': 'GET',
 			'Content-Type':'application/json'
 		}
 	};
