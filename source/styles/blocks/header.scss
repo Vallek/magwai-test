@@ -71,6 +71,7 @@
 	bottom: 0;
 	transform: translateY(100%);
 	background-color: var(--back-color);
+	z-index: 2;
 }
 
 @media (max-width: 1646px) {
