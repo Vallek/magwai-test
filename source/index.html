@@ -18,20 +18,28 @@
 	<header class="header">
 		<div class="header__content">
 			<h1 class="visually-hidden">Magwai</h1>
-			<nav class="dropdown-menu header__dropdown-menu">
-				<button class="dropdown-menu__button">
+			<div class="dropdown header__dropdown">
+				<button class="dropdown__button">
 					<span class="visually-hidden">Показать/скрыть выпадающее меню</span>
 				</button>
-				<ul class="dropdown-menu__list hidden">
-					<li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">УСЛУГИ</a></li>
-					<li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">АБОНЕМЕНТЫ</a></li>
-					<li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">ПОЧЕМУ МЫ</a></li>
-					<li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">ОБОРУДОВАНИЕ</a></li>
-					<li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">АКЦИИ</a></li>
-					<li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">FAQ</a></li>
-					<li class="dropdown-menu__item"><a href="#" class="dropdown-menu__link">КОНТАКТЫ</a></li>
-				</ul>
-			</nav>
+				<div class="dropdown__menu hidden">
+					<ul class="dropdown__list">
+						<li class="dropdown__item"><a href="#" class="dropdown__link">УСЛУГИ</a></li>
+						<li class="dropdown__item"><a href="#" class="dropdown__link">АБОНЕМЕНТЫ</a></li>
+						<li class="dropdown__item"><a href="#" class="dropdown__link">ПОЧЕМУ МЫ</a></li>
+						<li class="dropdown__item"><a href="#" class="dropdown__link">ОБОРУДОВАНИЕ</a></li>
+						<li class="dropdown__item"><a href="#" class="dropdown__link">АКЦИИ</a></li>
+						<li class="dropdown__item"><a href="#" class="dropdown__link">FAQ</a></li>
+						<li class="dropdown__item"><a href="#" class="dropdown__link">КОНТАКТЫ</a></li>
+					</ul>
+					<article class="dropdown__action action">
+						<a href="tel:5555555" class="action__call">
+							<span class="visually-hidden">Позвонить</span>
+						</a>
+						<a href="#" class="action__request">ОСТАВИТЬ ЗАЯВКУ</a>
+					</article>
+				</div>
+			</div>
 			<a href="" class="header__logo logo">
 				<img src="images/magwai-logo-text.svg" alt="Логотип Magwai" class="logo__image">
 			</a>
