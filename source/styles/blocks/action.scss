@@ -79,23 +79,23 @@
 	background-position-x: 0%;
 }
 
-.action::after {
+.action__request::after {
 	content: '';
 	position: absolute;
-	right: 10px;
+	right: 0;
 	top: 0;
 	display: inline-block;
 	width: 6px;
 	height: 100%;
 	background-color: var(--main-color);
-	background-image: linear-gradient(to top, #f55eb4 50%, var(--back-color-light) 50%);
+	background-image: linear-gradient(to top, #f55eb4 50%, var(--main-color) 50%);
 	background-size: 100% 200%;
 	background-position-y: 0%;
 	transition: background-position-y 0.3s 0s ease-out;
-	transform: skewX(-17deg);
+	transform: skewX(-17deg) translateX(10px);
 }
 
-.action:hover::after {
+.action__request:hover::after {
 	background-position-y: 100%;
 	transition-delay: 0.3s !important;
 }
