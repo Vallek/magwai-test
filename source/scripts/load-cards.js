@@ -77,7 +77,6 @@ function loadCards(evt) {
 		createCards(json);
 	} else if (json === null) {
 		fetchCards();
-		countCards();
 		createCards(json);
 	}
 }
