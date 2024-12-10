@@ -1,6 +1,5 @@
 'use stict';
 
-sessionStorage.clear();
 let count = 0;
 const loadButton = document.querySelector('.cards__load');
 const allCards = document.querySelector('.cards__items');
