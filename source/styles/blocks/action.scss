@@ -10,9 +10,9 @@
 .action__call {
 	opacity: 0.4;
 	display: flex;
-	width: 92.5px;
+	width: 75px;
 	height: 60px;
-	margin-right: 10px;
+	margin-right: 17px;
 	background-image: url('../../images/carbon_phone-filled.svg');
 	background-repeat: no-repeat;
 	background-position: center;
@@ -30,7 +30,7 @@
 	display: block;
 	width: 100%;
 	background-color: transparent;
-	border: 1px solid var(--main-color);
+	border: 2px solid var(--main-color);
 	transform: skewX(-17deg);
 	background-repeat: no-repeat;
 }
