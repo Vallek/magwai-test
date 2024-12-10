@@ -6,6 +6,7 @@
 }
 
 .menu__link {
+	position: relative;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	font-weight: 700;
@@ -15,4 +16,32 @@
 	color: var(--main-color);
 	text-decoration: none;
 	text-transform: uppercase;
+}
+
+.menu__link::before,
+.menu__link::after {
+	content: "";
+	width: 2px;
+	height: 50%;
+	display: inline-block;
+	visibility: hidden;
+	position: absolute;
+	top: 50%;
+	transform: scaleY(0) skewX(0deg) translateY(-50%);
+	background-color: var(--main-color);
+	transition: transform 0.3s ease-out;
+}
+
+.menu__link::before {
+	left: -21px;
+}
+
+.menu__link::after {
+	right: -21px;
+}
+
+.menu__item:hover > .menu__link::before,
+.menu__item:hover > .menu__link::after, {
+	visibility: visible;
+	transform: scaleY(1) skewX(-17deg) translateY(-50%);
 }

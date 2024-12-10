@@ -16,9 +16,11 @@
 	background-image: url('../../images/carbon_phone-filled.svg');
 	background-repeat: no-repeat;
 	background-position: center;
+	transition: opacity 0.3s ease-out;
 }
 
-.action__call:focus {
+.action__call:focus,
+.action__call:hover {
   opacity: 1;
 }
 
