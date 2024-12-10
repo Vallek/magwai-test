@@ -12,6 +12,18 @@
 	border-top-right-radius: 60px;
 }
 
+@media (max-width: 768px) {
+	.hero {
+		min-height: 907px;
+	}
+}
+
+@media (max-width: 360px) {
+	.hero {
+		min-height: 495px;
+	}
+}
+
 .hero__content {
 	width: 100%;
 	max-width: 1720px;
