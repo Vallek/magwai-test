@@ -33,15 +33,15 @@
 }
 
 .menu__link::before {
-	left: -21px;
+	left: -20px;
 }
 
 .menu__link::after {
-	right: -21px;
+	right: -10px;
 }
 
 .menu__item:hover > .menu__link::before,
-.menu__item:hover > .menu__link::after, {
+.menu__item:hover > .menu__link::after {
 	visibility: visible;
 	transform: scaleY(1) skewX(-17deg) translateY(-50%);
 }
