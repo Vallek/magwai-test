@@ -1,1 +1,77 @@
-"use stict";(()=>{var c=0,r=document.querySelector(".cards__load"),i=document.querySelector(".cards__items"),u=document.querySelector(".cards__item");async function d(){let t=await fetch("https://jsonplaceholder.typicode.com/posts",{method:"GET",headers:{"Content-Type":"application/json"}});if(t.ok){let s=(await t.json()).slice(0,20);sessionStorage.setItem("cardsPreloaded",JSON.stringify(s))}}d();function f(e,t){let o=u.cloneNode(!0),n=o.querySelector(".cards__title"),s=o.querySelector(".cards__subtitle"),l=o.querySelector(".cards__text");if(e[t]!==void 0)n.textContent=e[t].title,s.textContent=e[t].title,l.textContent=e[t].body,i.appendChild(o);else return}function C(){c++,sessionStorage.setItem("cardsCount",c),sessionStorage.getItem("cardsCount")>=4&&r.remove()}function a(e){let t=sessionStorage.getItem("cardsCount"),o=5;for(let n=0;n<o;n++)if(e!==null){let s=n-o+o*t;f(e,s)}else return}function m(e){e.preventDefault();let t=JSON.parse(sessionStorage.getItem("cardsPreloaded"));t!==null?(C(),a(t)):t===null&&(d(),a(t))}r.addEventListener("click",m);function p(){window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"})}r.addEventListener("click",p);})();
+"use stict";
+(() => {
+  // source/scripts/load-cards.js
+  var count = 0;
+  var loadButton = document.querySelector(".cards__load");
+  var allCards = document.querySelector(".cards__items");
+  var card = document.querySelector(".cards__item");
+  async function fetchCards() {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts", options);
+    if (response.ok) {
+      const json = await response.json();
+      let n = 20;
+      const cardsRequired = json.slice(0, n);
+      sessionStorage.setItem("cardsPreloaded", JSON.stringify(cardsRequired));
+    }
+  }
+  fetchCards();
+  function cardContent(json, n) {
+    const newCard = card.cloneNode(true);
+    const cardTitle = newCard.querySelector(".cards__title");
+    const cardSubtitle = newCard.querySelector(".cards__subtitle");
+    const cardText = newCard.querySelector(".cards__text");
+    if (json[n] !== void 0) {
+      cardTitle.textContent = json[n].title;
+      cardSubtitle.textContent = json[n].title;
+      cardText.textContent = json[n].body;
+      allCards.appendChild(newCard);
+    } else {
+      return;
+    }
+  }
+  function countCards() {
+    count++;
+    sessionStorage.setItem("cardsCount", count);
+    let currCount = sessionStorage.getItem("cardsCount");
+    if (currCount >= 4) {
+      loadButton.remove();
+    }
+  }
+  function createCards(json) {
+    let currCount = sessionStorage.getItem("cardsCount");
+    let cardsAmount = 5;
+    for (let i = 0; i < cardsAmount; i++) {
+      if (json !== null) {
+        let a = i - cardsAmount + cardsAmount * currCount;
+        cardContent(json, a);
+      } else {
+        return;
+      }
+    }
+  }
+  function loadCards(evt) {
+    evt.preventDefault();
+    const json = JSON.parse(sessionStorage.getItem("cardsPreloaded"));
+    if (json !== null) {
+      countCards();
+      createCards(json);
+    } else if (json === null) {
+      fetchCards();
+      createCards(json);
+    }
+  }
+  loadButton.addEventListener("click", loadCards);
+  function scrollToBottom() {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth"
+    });
+  }
+  loadButton.addEventListener("click", scrollToBottom);
+})();
