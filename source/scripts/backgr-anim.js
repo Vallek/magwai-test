@@ -1,9 +1,10 @@
 'use stict';
 
 const backImg = document.querySelector('.hero');
+const header = document.querySelector('.header');
 
 const windowHeight = window.innerHeight;
-const elementVisible = 116;
+const elementVisible = header.getBoundingClientRect().bottom;
 
 	function scrollAnim() {
 		let elementTop = backImg.getBoundingClientRect().top;
