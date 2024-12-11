@@ -75,7 +75,8 @@
 	z-index: -1;
 }
 
-.action__request:hover::before {
+.action__request:hover::before,
+.action__request:focus::before {
 	background-position-x: 0%;
 }
 
@@ -95,7 +96,8 @@
 	transform: skewX(-17deg) translateX(10px);
 }
 
-.action__request:hover::after {
+.action__request:hover::after,
+.action__request:focus::after {
 	background-position-y: 100%;
 	transition-delay: 0.3s !important;
 }
