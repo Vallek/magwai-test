@@ -78,11 +78,11 @@ export function processScripts () {
 
   return src(`${PATH_TO_SOURCE}scripts/*.js`)
     .pipe(gulpEsbuild({
-      bundle: true,
-      format: 'iife',
+      // bundle: true,
+      format: 'esm',
       // splitting: true,
       platform: 'browser',
-      // minify: !isDevelopment,
+      minify: !isDevelopment,
       sourcemap: isDevelopment,
       target: browserslistToEsbuild(),
     }))
