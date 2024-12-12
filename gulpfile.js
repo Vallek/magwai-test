@@ -82,7 +82,7 @@ export function processScripts () {
       format: 'esm',
       // splitting: true,
       platform: 'browser',
-      minify: !isDevelopment,
+      // minify: !isDevelopment,
       sourcemap: isDevelopment,
       target: browserslistToEsbuild(),
     }))
