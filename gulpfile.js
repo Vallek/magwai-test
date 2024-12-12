@@ -76,13 +76,13 @@ export function processStyles () {
 export function processScripts () {
   const gulpEsbuild = createGulpEsbuild({ incremental: isDevelopment });
 
-  return src(`${PATH_TO_SOURCE}scripts/*.js`)
+  return src(`${PATH_TO_SOURCE}scripts/main.js`)
     .pipe(gulpEsbuild({
-      // bundle: true,
+      bundle: true,
       format: 'esm',
       // splitting: true,
       platform: 'browser',
-      // minify: !isDevelopment,
+      minify: !isDevelopment,
       sourcemap: isDevelopment,
       target: browserslistToEsbuild(),
     }))
