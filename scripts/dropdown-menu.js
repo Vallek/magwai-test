@@ -1,1 +1,6 @@
-"use stict";const e=document.querySelector(".dropdown__button"),t=document.querySelector(".dropdown__menu");e.addEventListener("click",()=>{t.classList.toggle("hidden")});
+"use stict";
+const menuButton = document.querySelector(".dropdown__button");
+const menuDropdown = document.querySelector(".dropdown__menu");
+menuButton.addEventListener("click", () => {
+  menuDropdown.classList.toggle("hidden");
+});
