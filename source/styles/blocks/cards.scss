@@ -28,7 +28,7 @@
 
 .cards__items {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, 320px);
+	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 	grid-template-rows: repeat(6, auto);
 	justify-content: center;
 	gap: 30px;
@@ -57,6 +57,7 @@
 }
 
 .cards__image {
+	object-fit: cover;
 	max-width: unset;
 	width: calc(100% + var(--side-padding)*2);
 	margin-left: calc(var(--side-padding) * -1);
