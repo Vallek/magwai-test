@@ -39,10 +39,16 @@
 .cards__item {
 	grid-row: span 6;
 	display: grid;
-	grid-template-rows: subgrid;
+	grid-template-rows: repeat(5, auto) minmax(50px, min-content);
 	gap: 0;
 	color: var(--main-color-dark);
 	background-color: var(--main-color);
+}
+
+@supports (grid-template-rows: subgrid) {
+	.cards__item {
+		grid-template-rows: subgrid;
+	}
 }
 
 .cards__item {
@@ -109,15 +115,20 @@
 }
 
 .cards__link {
+	box-sizing: border-box;
+	align-self: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+	height: min-content;
 	min-height: 50px;
+	padding: 1em;
 	color: var(--main-color);
 	background-color: var(--main-color-dark);
 	text-decoration: none;
 	font-family: "Mulish", sans-serif;
 	font-weight: 600;
 	font-size: 14px;
+	word-break: break-word;
 }
